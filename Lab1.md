@@ -39,6 +39,7 @@ Dưới đây là một vài cơ chế phân tích có thể áp dụng cho Payr
 - Tên ca sử dụng: Select Payment
 - Mô tả: Ca sử dụng này cho phép nhân viên chọn phương thức thanh toán cho lương của họ. Nhân viên có thể chọn giữa việc nhận séc trực tiếp, nhận qua bưu điện, hoặc nhận tiền chuyển khoản trực tiếp vào tài khoản ngân hàng đã chỉ định.
 2. Các lớp phân tích:
+
 Boundary Class: PaymentMethodSelectionUI
 - Giao diện người dùng cho phép nhân viên chọn phương thức thanh toán và nhập thông tin cần thiết.
 ## 4. Phân tích ca sử dụng Maintain Timecard:
