@@ -42,6 +42,12 @@ Dưới đây là một vài cơ chế phân tích có thể áp dụng cho Payr
 
 Boundary Class: PaymentMethodSelectionUI
 - Giao diện người dùng cho phép nhân viên chọn phương thức thanh toán và nhập thông tin cần thiết.
+Control Class: PaymentMethodController
+- Chịu trách nhiệm xử lý luồng sự kiện, điều phối giữa lớp biên và lớp thực thể, xác thực thông tin và cập nhật dữ liệu.
+Entity Class:
+- Employee: Đại diện cho nhân viên trong hệ thống, chứa thông tin như tên, địa chỉ, và phương thức thanh toán đã chọn.
+- PaymentMethod: Đại diện cho các phương thức thanh toán (nhận trực tiếp, bưu điện, chuyển khoản).
+
 ## 4. Phân tích ca sử dụng Maintain Timecard:
 ## 5. Hợp nhất kết quả phân tích:
 
