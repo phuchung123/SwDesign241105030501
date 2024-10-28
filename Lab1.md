@@ -23,5 +23,16 @@ Biểu đồ kiến trúc của hệ thống Payroll System:
 
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bT1Od9sOdggWbB8mrtByz8Lt3CJynLSCX_kRizJKgZcKW02k18aEGM_z6CR7kwUcwdWSdXdNhgIGcAnGa1HQd5gNabYIMP-dazYPMgHWerD3eYsi-EgvSAmAUBXxhKAFeVt0etA09bPe13sSFTI34jnAGDQw5HQd9cNMbpiav-UcKo4ZIuFTwzNy04PKefXJKXHQQM2yyDTQmjGbG6jSKaiISHYEXRlwkhQON4K5pPtWfJ23UPoICrB0SO60000__y30000)
 
+## 2. Cơ chế phân tích:
 
+Dưới đây là một vài cơ chế phân tích có thể áp dụng cho Payroll System là: 
+- Authorization and access control: Để đảm bảo tính bảo mật, hệ thống cần có cơ chế phân quyền truy cập. Nhân viên chỉ có thể xem và chỉnh sửa các thông tin cá nhân của mình.
+- Multi-factor Authentication (MFA): Để tăng cường bảo mật, đặc biệt là cho dữ liệu nhạy cảm về tài chính, hệ thống nên áp dụng xác thực đa yếu tố. Điều này giúp ngăn chặn việc truy cập trái phép từ bên ngoài hoặc từ các nhân viên không có quyền.
+- Backup and Recovery: Để đảm bảo tính liên tục của hệ thống, cần xây dựng cơ chế sao lưu tự động cho các bản ghi về giờ làm, đơn hàng và thông tin thanh toán. Các bản sao lưu cần được lưu trữ an toàn và có quy trình phục hồi dữ liệu để nhanh chóng khôi phục hệ thống trong trường hợp lỗi hoặc sự cố.
+- Periodic inspection and maintenance: Một hệ thống kiểm tra và bảo trì định kỳ sẽ giúp hệ thống luôn được cập nhật và khắc phục lỗi kịp thời. Bảo trì định kỳ có thể bao gồm kiểm tra mã nguồn, rà soát bảo mật và nâng cấp các thành phần phần mềm để tối ưu hiệu suất và khả năng bảo mật của hệ thống. 
+- Automatically run and pay periodically: Cơ chế này giúp hệ thống tự động chạy quy trình tính lương vào các ngày cố định (thứ Sáu hàng tuần và ngày làm việc cuối cùng trong tháng), đảm bảo tính lương đều đặn mà không cần sự can thiệp của con người.
+- Data encryption: Dữ liệu nhạy cảm, bao gồm thông tin tài khoản ngân hàng, địa chỉ, và chi tiết cá nhân của nhân viên, cần được mã hóa cả khi lưu trữ và truyền tải.
+
+## 3. Phân tích ca sử dụng Payment:
+## 4. Phân tích ca sử dụng Maintain Timecard:
 
