@@ -20,6 +20,7 @@ Giải thích lý do lựa kiến trúc:
 - Data Layer (Tầng dữ liệu): Tầng này sẽ chứa các hoạt động tương tác với cơ sở dữ liệu, như lấy thông tin thời gian làm việc, chi tiết lương và đơn đặt hàng của nhân viên từ các bảng liên quan. Nó đảm bảo rằng tất cả các thông tin về nhân viên, lương, thời gian làm việc, và mã chi phí được lưu trữ an toàn và sẵn sàng cho việc truy xuất.
 
 Biểu đồ kiến trúc của hệ thống Payroll System
+
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/b9AnIWD148RxVOgVhSuYsAUGe0Tf3aaHn7ROB9SbvzwnkrS4iROIV06B568LJ6iMiJYvzzWdy1NSq-Q88jwqyy_tpp_CXt-RM4V6rLS5OtQbD4nf9MCLYHNb4dmUzaywnrHHYLG5VwivhXbYYOAi1UzrS9wtk-0V5DBc9GubCoEjr8wSAZKoMajpnDdDJ_fby5japMi4B3jIXOlW7m-CVXSXEQsjqZ8giZ9NuY-RDFXdPDriVS2UctgDix3VLdqHafGSzOc3qs8qEXcwEiPneNRNRYBKDHl1sL30b-b_CdLMx_V1tudZwL9XqUcAxmCnDf5w4V_Y4m00__y30000)
 
 
