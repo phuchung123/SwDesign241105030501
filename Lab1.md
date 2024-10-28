@@ -33,6 +33,14 @@ Dưới đây là một vài cơ chế phân tích có thể áp dụng cho Payr
 - Automatically run and pay periodically: Cơ chế này giúp hệ thống tự động chạy quy trình tính lương vào các ngày cố định (thứ Sáu hàng tuần và ngày làm việc cuối cùng trong tháng), đảm bảo tính lương đều đặn mà không cần sự can thiệp của con người.
 - Data encryption: Dữ liệu nhạy cảm, bao gồm thông tin tài khoản ngân hàng, địa chỉ, và chi tiết cá nhân của nhân viên, cần được mã hóa cả khi lưu trữ và truyền tải.
 
-## 3. Phân tích ca sử dụng Payment:
+## 3. Phân tích ca sử dụng Select Payment:
+
+1. Mô tả ca sử dụng Select Payment:
+- Tên ca sử dụng: Select Payment
+- Mô tả: Ca sử dụng này cho phép nhân viên chọn phương thức thanh toán cho lương của họ. Nhân viên có thể chọn giữa việc nhận séc trực tiếp, nhận qua bưu điện, hoặc nhận tiền chuyển khoản trực tiếp vào tài khoản ngân hàng đã chỉ định.
+2. Các lớp phân tích:
+Boundary Class: PaymentMethodSelectionUI
+- Giao diện người dùng cho phép nhân viên chọn phương thức thanh toán và nhập thông tin cần thiết.
 ## 4. Phân tích ca sử dụng Maintain Timecard:
+## 5. Hợp nhất kết quả phân tích:
 
