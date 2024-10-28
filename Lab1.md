@@ -9,6 +9,6 @@ Các tầng trong hệ thống:
 - Tầng xử lý nghiệp vụ (Business Logic Layer): Tầng này chứa toàn bộ logic nghiệp vụ của hệ thống, xử lý các quy tắc liên quan đến tính lương, tính hoa hồng, quản lý các loại lương của nhân viên (theo giờ, hưởng lương cố định, có hoa hồng), và tạo các báo cáo.
 - Tầng dữ liệu (Data Layer): Tầng dữ liệu chịu trách nhiệm lưu trữ và quản lý dữ liệu của hệ thống, bao gồm thông tin nhân viên, thông tin chấm công, thông tin thanh toán và các bảng dữ liệu liên quan.
 
-Giải thích lý do lựa chọn kiến trúc 3 tầng:
+  Giải thích lý do lựa chọn kiến trúc 3 tầng:
 - 
 
