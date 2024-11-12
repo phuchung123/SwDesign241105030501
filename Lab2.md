@@ -88,7 +88,7 @@ Entity Class:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5JBJkGm4BpdAomkm65-80S4oymXqcftnUlUs3qJQ_t8kcqWGdpP7lWaVW5xCex6aw0XXqZfgYwNs-Ly_7-_90_E1wsgwfJziC48S3sxLa1KyVHc9t-WTrOfTYMqD9Ay0syTQun7jmQE9-orOkbn-2yW-TyTHeQqvknyg6DYhdIdR8_OcBNDW93KAUZd86hjyxKrQ-bqrdfB3cFDHpE3GHmjPeaThD2Dha28Z6Rnq0dmU5WLg71QVG8bzzcD6AmSBFmmqABJ6GiJZRsDyXRvtmoiNk9uqN3CsrqPBtt_rMxp0WiSpTNirZjfDaFTWCQoafbtVNU0Q90gVbm9uP2enCXo2UeMUN3Hpg-W7z6L30ylInI1fmaSD5lVeliAx5fhS4wmjS6f_YPEhMPB6nuLxgo0YW4jQzngBOcY-fIVT7vABNszJUm6tIGM-yTHHgC8Qn6F7J8DGhCSZts39jq4l3SoNemKd76BsyEzGRLD3BMoe-huDLiiBkQJNZEPMC0ziMVfssgMLRId9Wq6DZ5LnzdpwQuP1wM8hQFDfv7n3Raqe_tcPfbdLVJFTb4SIlHSNQ8HyQ_r2G00__y30000)
 Giải thích biểu đồ lớp:
 - Payroll Administrator Interface:
-  - Là lớp giao diện (Boundary) tương tác với Quản Trị Viên Lương. Lớp này cung cấp các phương thức để nhập thông tin nhân viên, yêu cầu thực hiện thao tác (thêm, cập nhật, xóa), và hiển thị kết quả.
+  - Là lớp giao diện (Boundary) tương tác với Quản trị viên lương. Lớp này cung cấp các phương thức để nhập thông tin nhân viên, yêu cầu thực hiện thao tác (thêm, cập nhật, xóa), và hiển thị kết quả.
 - EmployeeController:
   - Là lớp điều khiển (Control) chịu trách nhiệm thực hiện các tác vụ nghiệp vụ chính như thêm, cập nhật, xóa nhân viên. Nó kiểm tra tính hợp lệ của thông tin và điều phối các hành động tương ứng.
 - EmployeeValidationController:
@@ -97,3 +97,36 @@ Giải thích biểu đồ lớp:
   - Là lớp thực thể (Entity) đại diện cho thông tin nhân viên. Lớp này lưu trữ các thuộc tính của nhân viên như tên, loại nhân viên, mức lương, và các thông tin khác, đồng thời cung cấp các phương thức để thêm, cập nhật và xóa thông tin.
 - EmployeeID:
   - Là lớp thực thể quản lý việc tạo mã nhân viên duy nhất. Nó cung cấp phương thức generateUniqueId() để tạo mã nhân viên mới khi thêm nhân viên vào hệ thống.
+## IV. Phân tích ca sử dụng Run Payroll:
+### 1. Mô tả ca sử dụng:
+Ca sử dụng này mô tả cách thức trả lương được thực hiện tự động vào mỗi ngày thứ Sáu và vào ngày làm việc cuối cùng của tháng.
+### 2. Các lớp phân tích:
+- Boundary Class: PayrollScheduler, PaymentMethod.
+- Control Class: PayrollProcessor, BankTransactionHandler.
+- Entity Class: Employee, Payroll, BankTransaction.
+### 3. Biểu đồ Sequence:
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/X5D9RiCm3Bph5JosGFg17egWIO4UWomFe6Kc4I9B1YK7qDjww9FwXLAAcwLnO0C6R98pd26bdw_lQOZ8iMkiGXqzmoOGgrP2HfiMNOG59lRMhlIUwiuE9nViDONWRvCVJMjz8he9lgCxh1bTa7R6kqzqzN_INB9A8LAZL9O3BsztAk0LrcnsE_dgKz2BK7Ub5_XPfy1NsVSZyALGm7y-1BIao8QET8wD8cPeTMSnKcu5Jz4qf97hC86sOxt7GE2v9fP0G8kS9b2Hews94gd5GHbJU5PeYzg6P49LWjcUz461F2C25cm4qMBI1K4sq3NFt33f27DgVJ3n8U7msh8_fcmkv-6ge10z0FLqfnNdJP2hXmcovvBeQpSEZsWiLfPAVhp9eEQynGIuZVAN5rAuH8JAxv3xSWh5gvUnqccLDwTcAa2vGhy0003__mC0)
+### 4. Nhiệm vụ của các lớp phân tích:
+Boundary Class:
+- PayrollScheduler: Lớp này quản lý lịch trình chạy bảng lương, cụ thể là việc tự động kích hoạt quá trình trả lương vào mỗi thứ Sáu và vào ngày làm việc cuối cùng của tháng.
+- PaymentMethod: Lớp này chứa thông tin về phương thức thanh toán của nhân viên (ví dụ: chuyển khoản ngân hàng, trả qua thư, hoặc nhận trực tiếp).
+
+Control Class:
+- PayrollProcessor: Lớp này là trung tâm của quá trình tính toán bảng lương. Nó điều phối việc lấy thông tin về các nhân viên cần trả lương, tính toán các khoản thanh toán dựa trên các yếu tố như lương, thời gian làm việc, đơn mua hàng, quyền lợi và các khoản khấu trừ.
+- BankTransactionHandler: Lớp này quản lý quá trình tạo và gửi giao dịch ngân hàng khi phương thức thanh toán là chuyển khoản.
+
+Entity Class:
+- Employee: Lớp này đại diện cho thông tin của một nhân viên trong hệ thống.
+- Payroll: Lớp này đại diện cho bảng lương của một nhân viên trong một kỳ trả lương.
+- BankTransaction: Lớp này đại diện cho một giao dịch ngân hàng khi thanh toán qua chuyển khoản.
+### 5. Biểu đồ lớp:
+![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5HBJiCm4Dtd55d2eXU8K5MGa402LAcvW6jFWuK_aJsf525Ene8ZSGN6YPCwQLEnYz-ycNdpo-_tpyOZSzXebN75lC-th7LMgHr_1z4eSFbdbkSvEbbLuA9nwom7xszkiw_ivAR1u2lWknMzZ-w-oxQ6lCXt5C5K0VOGMS528GYgfj29dePF4jkegkwVqTZ7Sa2kS8H7NIlR0lWUvapnHZ448aV40JqVcFae7JEUSPJMf2NDJ4_CYB4VIyvTVKOaO6a3wwIjlP9jrte4FQbjWJrKrtEbe9P9W-7RC3thDrFCjGG9s-mL16WF1WuI_GGKDEykpnH6gO4p9mBw8ZtUbH5OnyaDKfxDmLwRNIyL1dOY6IqoHQp_o360SsP5rRX-ijtcDbfJmHUbp0OsxFO8fAgOjet1QT_8_PxpWByrUa_Ba3RwqiI8SBHI10LdXxLQhS_tkXXEpMTdjk0m3huODzsFJINf1tlPRtgVL1GWE2qDUTUzATxhPVU5MoZY8VYqYTa2UOWJjxpeBcNgELQNz2Oa6Owt4nl0UOxh8XtK3YWRJhDjA3_z-Fu0003__mC0)
+Giải thích biểu đồ lớp:
+- PayrollScheduler: Quản lý lịch trình và kích hoạt quá trình trả lương.
+- PaymentMethod: Đại diện cho phương thức thanh toán của nhân viên, có thể là chuyển khoản ngân hàng, trả qua thư, hoặc nhận trực tiếp.
+- PayrollProcessor: Xử lý toàn bộ quá trình trả lương, tính toán tiền lương và giao tiếp với các hệ thống như ngân hàng.
+- BankTransactionHandler: Tạo giao dịch ngân hàng và gửi nó đến hệ thống ngân hàng. Nếu giao dịch thất bại, nó sẽ thử lại.
+- BankSystem: Xử lý giao dịch ngân hàng.
+- Employee: Chứa thông tin chi tiết của nhân viên như lương, quyền lợi, khấu trừ và thẻ chấm công.
+- Payroll: Đại diện cho bảng lương của nhân viên trong hệ thống, chứa tổng tiền lương, các khoản khấu trừ và tiền thực nhận.
+- BankTransaction: Đại diện cho giao dịch ngân hàng khi thực hiện thanh toán qua chuyển khoản.
