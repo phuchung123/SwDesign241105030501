@@ -159,10 +159,9 @@ Giải thích biểu đồ lớp:
 # Code Java mô phỏng ca sử dụng Maintain Timecard
 ## 1. Timecard Class:
 Lớp này sẽ đại diện cho thẻ chấm công của nhân viên, bao gồm các phương thức để thêm giờ làm, kiểm tra tính hợp lệ của giờ làm và nộp thẻ chấm công.
-import java.util.HashMap;
-import java.util.Map;
 
 public class Timecard {
+
     private String employeeId;
     private String startDate;
     private String endDate;
@@ -214,7 +213,9 @@ public class Timecard {
 
 ## 2. Employee Class:
 Lớp này đại diện cho nhân viên, có thể tạo thẻ chấm công, thêm giờ làm và nộp thẻ chấm công.
+
 public class Employee {
+
     private String employeeId;
     private Timecard currentTimecard;
 
@@ -261,6 +262,7 @@ public class Employee {
 public class Main {
 
     public static void main(String[] args) {
+    
         // Tạo một đối tượng Scanner để đọc dữ liệu từ bàn phím
         Scanner scanner = new Scanner(System.in);
 
