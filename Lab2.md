@@ -156,3 +156,165 @@ Giải thích biểu đồ lớp:
 - PaymentMethod: Lớp này đại diện cho phương thức thanh toán của nhân viên, bao gồm các thuộc tính như loại phương thức thanh toán (type), địa chỉ nhận thư (address), tên ngân hàng và số tài khoản (bankName, accountNumber).
 - EmployeeInterface: Lớp này cung cấp giao diện cho nhân viên để chọn phương thức thanh toán, yêu cầu thông tin bổ sung nếu cần và hiển thị các lựa chọn.
 - PaymentMethodController: Lớp điều khiển này chịu trách nhiệm xử lý logic liên quan đến phương thức thanh toán, bao gồm việc yêu cầu thông tin nhân viên, chọn phương thức thanh toán và cập nhật thông tin nhân viên trong hệ thống.
+# Code Java mô phỏng ca sử dụng Maintain Timecard
+## 1. Timecard Class:
+Lớp này sẽ đại diện cho thẻ chấm công của nhân viên, bao gồm các phương thức để thêm giờ làm, kiểm tra tính hợp lệ của giờ làm và nộp thẻ chấm công.
+import java.util.HashMap;
+import java.util.Map;
+
+public class Timecard {
+    private String employeeId;
+    private String startDate;
+    private String endDate;
+    private Map<String, Integer> chargeNumbers; // chargeNumber -> hours worked
+    private boolean submitted;
+
+    public Timecard(String employeeId, String startDate, String endDate) {
+        this.employeeId = employeeId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.chargeNumbers = new HashMap<>();
+        this.submitted = false;
+    }
+
+    public boolean addHours(String chargeNumber, int hours) {
+        if (submitted) {
+            System.out.println("Timecard already submitted, cannot modify hours.");
+            return false;
+        }
+        if (hours < 0 || hours > 24) {
+            System.out.println("Invalid hours entered, please enter a valid number of hours.");
+            return false;
+        }
+        chargeNumbers.put(chargeNumber, hours);
+        return true;
+    }
+
+    public boolean submitTimecard() {
+        if (submitted) {
+            System.out.println("Timecard has already been submitted.");
+            return false;
+        }
+        submitted = true;
+        System.out.println("Timecard submitted successfully.");
+        return true;
+    }
+
+    public boolean isSubmitted() {
+        return submitted;
+    }
+
+    public void printTimecard() {
+        System.out.println("Timecard for Employee: " + employeeId);
+        for (Map.Entry<String, Integer> entry : chargeNumbers.entrySet()) {
+            System.out.println("Charge Number: " + entry.getKey() + ", Hours Worked: " + entry.getValue());
+        }
+    }
+}
+
+## 2. Employee Class:
+Lớp này đại diện cho nhân viên, có thể tạo thẻ chấm công, thêm giờ làm và nộp thẻ chấm công.
+public class Employee {
+    private String employeeId;
+    private Timecard currentTimecard;
+
+    public Employee(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void createTimecard(String startDate, String endDate) {
+        if (currentTimecard != null && !currentTimecard.isSubmitted()) {
+            System.out.println("Cannot create a new timecard until the current one is submitted.");
+        } else {
+            currentTimecard = new Timecard(employeeId, startDate, endDate);
+            System.out.println("New timecard created.");
+        }
+    }
+
+    public boolean addHours(String chargeNumber, int hours) {
+        if (currentTimecard == null) {
+            System.out.println("No timecard available. Please create a timecard first.");
+            return false;
+        }
+        return currentTimecard.addHours(chargeNumber, hours);
+    }
+
+    public boolean submitTimecard() {
+        if (currentTimecard == null) {
+            System.out.println("No timecard available to submit.");
+            return false;
+        }
+        return currentTimecard.submitTimecard();
+    }
+
+    public void printTimecard() {
+        if (currentTimecard != null) {
+            currentTimecard.printTimecard();
+        } else {
+            System.out.println("No timecard available.");
+        }
+    }
+}
+
+## 3. Hàm Main:
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Tạo một đối tượng Scanner để đọc dữ liệu từ bàn phím
+        Scanner scanner = new Scanner(System.in);
+
+        // Tạo một nhân viên mới
+        System.out.println("Enter employee ID:");
+        String employeeId = scanner.nextLine();
+        Employee employee = new Employee(employeeId);
+
+        // Nhân viên tạo thẻ chấm công cho kỳ lương
+        System.out.println("Enter start date for the timecard (YYYY-MM-DD):");
+        String startDate = scanner.nextLine();
+        System.out.println("Enter end date for the timecard (YYYY-MM-DD):");
+        String endDate = scanner.nextLine();
+        employee.createTimecard(startDate, endDate);
+
+        // Nhân viên thêm giờ làm cho các dự án khác nhau
+        while (true) {
+            System.out.println("Do you want to enter hours for a project? (yes/no)");
+            String choice = scanner.nextLine();
+            if (choice.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Enter charge number (e.g., P001):");
+            String chargeNumber = scanner.nextLine();
+            System.out.println("Enter hours worked for " + chargeNumber + ":");
+            int hours = scanner.nextInt();
+            scanner.nextLine();  // consume newline
+            if (!employee.addHours(chargeNumber, hours)) {
+                System.out.println("Invalid hours. Please try again.");
+            }
+        }
+
+        // In thẻ chấm công trước khi nộp
+        employee.printTimecard();
+
+        // Nhân viên nộp thẻ chấm công
+        System.out.println("Do you want to submit the timecard? (yes/no)");
+        String submitChoice = scanner.nextLine();
+        if (submitChoice.equalsIgnoreCase("yes")) {
+            employee.submitTimecard();
+        }
+
+        // Cố gắng chỉnh sửa thẻ chấm công sau khi đã nộp
+        System.out.println("Do you want to make any more changes after submission? (yes/no)");
+        String changeChoice = scanner.nextLine();
+        if (changeChoice.equalsIgnoreCase("yes")) {
+            System.out.println("You cannot modify the timecard after it has been submitted.");
+        }
+
+        // In thẻ chấm công sau khi nộp
+        employee.printTimecard();
+
+        // Đóng scanner
+        scanner.close();
+    }
+}
