@@ -129,3 +129,12 @@ Giải thích biểu đồ lớp:
 - Employee: Chứa thông tin chi tiết của nhân viên như lương, quyền lợi, khấu trừ và thẻ chấm công.
 - Payroll: Đại diện cho bảng lương của nhân viên trong hệ thống, chứa tổng tiền lương, các khoản khấu trừ và tiền thực nhận.
 - BankTransaction: Đại diện cho giao dịch ngân hàng khi thực hiện thanh toán qua chuyển khoản.
+## V. Phân tích ca sử dụng Select Payment Method:
+### 1. Mô tả ca sử dụng:
+Ca sử dụng này cho phép Quản trị viên tạo báo cáo về "Tổng số giờ làm việc" hoặc "Lương tích lũy theo năm".
+### 2. Các lớp phân tích:
+- Boundary Class: ReportRequestForm, ReportDisplay, ReportSaveDialog.
+- Control Class: ReportController, SaveReportControl.
+- Entity Class: Report, Employee.
+### 3. Biểu đồ Sequence:
+![Sequence Diagram]
