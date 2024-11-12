@@ -90,16 +90,11 @@ Entity Class:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5JBJkGm4BpdAomkm65-80S4oymXqcftnUlUs3qJQ_t8kcqWGdpP7lWaVW5xCex6aw0XXqZfgYwNs-Ly_7-_90_E1wsgwfJziC48S3sxLa1KyVHc9t-WTrOfTYMqD9Ay0syTQun7jmQE9-orOkbn-2yW-TyTHeQqvknyg6DYhdIdR8_OcBNDW93KAUZd86hjyxKrQ-bqrdfB3cFDHpE3GHmjPeaThD2Dha28Z6Rnq0dmU5WLg71QVG8bzzcD6AmSBFmmqABJ6GiJZRsDyXRvtmoiNk9uqN3CsrqPBtt_rMxp0WiSpTNirZjfDaFTWCQoafbtVNU0Q90gVbm9uP2enCXo2UeMUN3Hpg-W7z6L30ylInI1fmaSD5lVeliAx5fhS4wmjS6f_YPEhMPB6nuLxgo0YW4jQzngBOcY-fIVT7vABNszJUm6tIGM-yTHHgC8Qn6F7J8DGhCSZts39jq4l3SoNemKd76BsyEzGRLD3BMoe-huDLiiBkQJNZEPMC0ziMVfssgMLRId9Wq6DZ5LnzdpwQuP1wM8hQFDfv7n3Raqe_tcPfbdLVJFTb4SIlHSNQ8HyQ_r2G00__y30000)
 
 Giải thích biểu đồ lớp:
-- Payroll Administrator Interface:
-  - Là lớp giao diện (Boundary) tương tác với Quản trị viên lương. Lớp này cung cấp các phương thức để nhập thông tin nhân viên, yêu cầu thực hiện thao tác (thêm, cập nhật, xóa), và hiển thị kết quả.
-- EmployeeController:
-  - Là lớp điều khiển (Control) chịu trách nhiệm thực hiện các tác vụ nghiệp vụ chính như thêm, cập nhật, xóa nhân viên. Nó kiểm tra tính hợp lệ của thông tin và điều phối các hành động tương ứng.
-- EmployeeValidationController:
-  - Là lớp điều khiển kiểm tra tính hợp lệ của thông tin nhân viên (ví dụ: kiểm tra xem mã nhân viên có tồn tại không, dữ liệu có hợp lệ hay không).
-- Employee:
-  - Là lớp thực thể (Entity) đại diện cho thông tin nhân viên. Lớp này lưu trữ các thuộc tính của nhân viên như tên, loại nhân viên, mức lương, và các thông tin khác, đồng thời cung cấp các phương thức để thêm, cập nhật và xóa thông tin.
-- EmployeeID:
-  - Là lớp thực thể quản lý việc tạo mã nhân viên duy nhất. Nó cung cấp phương thức generateUniqueId() để tạo mã nhân viên mới khi thêm nhân viên vào hệ thống.
+- Payroll Administrator Interface: Là lớp giao diện (Boundary) tương tác với Quản trị viên lương. Lớp này cung cấp các phương thức để nhập thông tin nhân viên, yêu cầu thực hiện thao tác (thêm, cập nhật, xóa), và hiển thị kết quả.
+- EmployeeController: Là lớp điều khiển (Control) chịu trách nhiệm thực hiện các tác vụ nghiệp vụ chính như thêm, cập nhật, xóa nhân viên. Nó kiểm tra tính hợp lệ của thông tin và điều phối các hành động tương ứng.
+- EmployeeValidationController: Là lớp điều khiển kiểm tra tính hợp lệ của thông tin nhân viên (ví dụ: kiểm tra xem mã nhân viên có tồn tại không, dữ liệu có hợp lệ hay không).
+- Employee: Là lớp thực thể (Entity) đại diện cho thông tin nhân viên. Lớp này lưu trữ các thuộc tính của nhân viên như tên, loại nhân viên, mức lương, và các thông tin khác, đồng thời cung cấp các phương thức để thêm, cập nhật và xóa thông tin.
+- EmployeeID: Là lớp thực thể quản lý việc tạo mã nhân viên duy nhất. Nó cung cấp phương thức generateUniqueId() để tạo mã nhân viên mới khi thêm nhân viên vào hệ thống.
 ## IV. Phân tích ca sử dụng Run Payroll:
 ### 1. Mô tả ca sử dụng:
 Ca sử dụng này mô tả cách thức trả lương được thực hiện tự động vào mỗi ngày thứ Sáu và vào ngày làm việc cuối cùng của tháng.
