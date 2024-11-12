@@ -12,6 +12,24 @@ Ca sử dụng này cho phép Quản trị viên tạo báo cáo về "Tổng s�
 
 ### 4. Nhiệm vụ của các lớp phân tích:
 Boundary Class:
-- ReportRequestForm: Lớp này đại diện cho giao diện người dùng, nơi Quản trị viên Bảng lương nhập tiêu chí báo cáo, như loại báo cáo, ngày bắt đầu và kết thúc, tên nhân viên, v.v.
-- ReportDisplay: Lớp này đại diện cho giao diện hiển thị báo cáo cho Quản trị viên Bảng lương.
-- ReportSaveDialog: Lớp này đại diện cho hộp thoại lưu báo cáo, nơi Quản trị viên Bảng lương nhập tên và vị trí lưu.
+- ReportRequestForm: Lớp này đại diện cho giao diện người dùng, nơi Quản trị viên nhập tiêu chí báo cáo, như loại báo cáo, ngày bắt đầu và kết thúc, tên nhân viên, v.v.
+- ReportDisplay: Lớp này đại diện cho giao diện hiển thị báo cáo cho Quản trị viên.
+- ReportSaveDialog: Lớp này đại diện cho hộp thoại lưu báo cáo, nơi Quản trị viên nhập tên và vị trí lưu.
+
+Control Class:
+- ReportController: Lớp này quản lý các quy trình tạo báo cáo, bao gồm việc xử lý tiêu chí báo cáo, tạo báo cáo theo yêu cầu, và lưu báo cáo vào hệ thống.
+- SaveReportControl: Lớp này đảm bảo rằng báo cáo được lưu ở vị trí và tên do Quản trị viên chỉ định, đồng thời xác nhận quyết định lưu từ người dùng.
+
+Entity Class:
+- Report: Lớp này lưu trữ thông tin của báo cáo, bao gồm loại báo cáo, khoảng thời gian, tên nhân viên, và dữ liệu tổng hợp tương ứng.
+- Employee: Lớp này đại diện cho thông tin nhân viên, bao gồm tên nhân viên và thông tin cần thiết khác để tạo báo cáo.
+
+### 5. Biểu đồ lớp:
+
+![Class Diagram](https://www.planttext.com/api/plantuml/png/d5HBRkCm3Dth54GspG3D1OoYw4oT0GfqKJIzW60nAG5PSYKvXL7qPBEO8_KAew_Zn6aMuuKDK--HZy-al_xylREE6zUtah4hg75B2i6z8lpIlHBS3D18RYrQ5f_mZ9qsxXdVUhJkjpOjV328bqcn1BWto1rfjMmCEJJ4AoW7wVr71NjD8dC5sKxouK5rVKowBCUVxAXkdN1ZpSnBXqiJ7wNIDoasV8yrSQbtfyh3oQDkakvZVOrMMp9jv693TehuF37kNYjdj3phMpwJQCRYJN0ASmSNt4g1GzyDD-9YtmbflUIpi6kGkTSADiwGsbs3uYsMjvbzcp5JwV1ZKkD5ZzRzTvqZ6zVAaJi_VRdm2jpGZNboA4vpxHsj8Dnp59MOnzfEwW7naQmN6-utwnowpOtjKA7nZFau5kGePTfI3f4u2eHqhl1gT9oa3OapPDg_GHaTiw_KMJPVkTNgTZvG5Iow82tP3sMK5co6FD3BFdbkNgMnPv4J5Nw11l8J7qAgdw8bvNtpS1thxmdVJsYJTGlC-H05sKRlIM2S8n39cGMRGm-w0okYdGRR-OtSaXTS1krYou5QUWGlEw_IYUn863-ofv1gPEyrbga1mPttbjtvqV8_pty0003__mC0)
+
+Giải thích biểu đồ lớp:
+- ReportRequestForm, ReportDisplay, và ReportSaveDialog là các lớp Boundary để xử lý tương tác với người dùng.
+- ReportController và SaveReportControl là các lớp Control để quản lý quy trình tạo và lưu báo cáo.
+- Report và Employee là các lớp Entity, lưu trữ dữ liệu báo cáo và thông tin nhân viên.
+- Quan hệ giữa các lớp được chỉ định với vai trò và phương thức của từng lớp để thực hiện luồng sự kiện trong ca sử dụng.
