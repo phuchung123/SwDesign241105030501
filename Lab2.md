@@ -131,10 +131,28 @@ Giải thích biểu đồ lớp:
 - BankTransaction: Đại diện cho giao dịch ngân hàng khi thực hiện thanh toán qua chuyển khoản.
 ## V. Phân tích ca sử dụng Select Payment Method:
 ### 1. Mô tả ca sử dụng:
-Ca sử dụng này cho phép Quản trị viên tạo báo cáo về "Tổng số giờ làm việc" hoặc "Lương tích lũy theo năm".
+Ca sử dụng này mô tả quá trình cho phép nhân viên chọn phương thức thanh toán.
 ### 2. Các lớp phân tích:
-- Boundary Class: ReportRequestForm, ReportDisplay, ReportSaveDialog.
-- Control Class: ReportController, SaveReportControl.
-- Entity Class: Report, Employee.
+- Boundary Class: Employee Interface.
+- Control Class: PaymentMethodController.
+- Entity Class: Employee, PaymentMethod.
 ### 3. Biểu đồ Sequence:
-![Sequence Diagram]
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/d5JDJi904BxlKqmuQG8lmC6G22OSC4JZ0mpT0JTiTylkzC2pUV2HV0LdjxHQg1ZjeOV9zpS_xSVR-omo1gvBgx1W7s1HLjOVYHGvDdo4KLk0fMCAMone11XXiLI5TnoyXT4QZwN0LyIlNjytLKiXuzQhhyA5PgFKbNiw9xPINO39dRZ259vJOeXagM3ZTb0rD2WpJmac8LlM5EOcLXQF7SvNRBoBS5EPOZ-fgp6KQEmOj0cY29eg7mtV3XXdos6_xtqAT8qndYAIFcVqi4bS20_6QQ3MqRYj3oMcd6en8Fz4N0VNnokq3EkcfSvQWJn3VeyUK6kJ7D1cFWGwr3A2dpalbKQcisw0FPm6gSX6WfKCynV_PMxXK5FaFFkqHKaJACPCk5ZX8jrU3_AdVCr-MtfEEM-MFM-M_OUy6tHxS5WIe6mCYyBNukNgSYC7VYLyvcbYYVAF3lgtEUwhaHkugPHPIbjpkYCHYn5tfFATTF6SPzXA2rSwRxyV2a5-4ArCCbKpUSk_unC00F__0m00)
+### 4. Nhiệm vụ của các lớp phân tích:
+Boundary Class:
+- Employee Interface: Hiển thị các lựa chọn phương thức thanh toán (pick-up, mail, direct deposit) cho nhân viên.
+
+Control Class:
+- PaymentMethodController: Là lớp điều khiển chính. Nó tiếp nhận yêu cầu từ lớp biên giới và thực hiện logic.
+
+Entity Class:
+- Employee: Lưu trữ thông tin về nhân viên, bao gồm các thông tin cá nhân và thông tin về phương thức thanh toán.
+- PaymentMethod: Lưu trữ thông tin về phương thức thanh toán mà nhân viên đã chọn (pick-up, mail, hoặc direct deposit).
+### 5. Biểu đồ lớp:
+![Class Diagram](https://www.planttext.com/api/plantuml/png/X9CzRiCm38LtdOB8v039qDLJ-ZTaQ5eWlO1YCObGMN8bkeLHz6GTUgHUeOej9vBZ89ijFfBV4wc_dz-58swfBXKh57SE7ijAcGOHlXZ07AJ8GMfglpKlCOSrMQbtxK75cn8rFI7jZTUznBzU0B13IWwpwPYghWGdJ8NbM4sV_M6aODyim2RHG4nDbL9o8Imwbvnjk7vR3UtmeZ2rfbLTRj16aTP7r-FL5p-OY68kYSNTUzoWkkquiW7FG7NdoHwGk5Gk6rBEnX7FhgMVuL8JsYqlkc422EagnPjmQyyLIQDT5WDuesjKM12Aiy55dYs-r-WEZkIX1bTBlJMHPdn0zqQJDKgX3JokRPKsmi2U7rt4VA7noQ1lssSikrMTdZAZxUgFhZMRmRNDEpwG-HmcDvF13kQmvuwT3s1C7Dr7IuwM5-JWKzAUNHA6EaU8FFXprpA6c7qQMw0M_ld_0m00__y30000)
+
+Giải thích biểu đồ lớp:
+- Employee: Lớp này chứa các thuộc tính của nhân viên (id, name, paymentMethod) và các phương thức để lấy và cập nhật phương thức thanh toán.
+- PaymentMethod: Lớp này đại diện cho phương thức thanh toán của nhân viên, bao gồm các thuộc tính như loại phương thức thanh toán (type), địa chỉ nhận thư (address), tên ngân hàng và số tài khoản (bankName, accountNumber).
+- EmployeeInterface: Lớp này cung cấp giao diện cho nhân viên để chọn phương thức thanh toán, yêu cầu thông tin bổ sung nếu cần và hiển thị các lựa chọn.
+- PaymentMethodController: Lớp điều khiển này chịu trách nhiệm xử lý logic liên quan đến phương thức thanh toán, bao gồm việc yêu cầu thông tin nhân viên, chọn phương thức thanh toán và cập nhật thông tin nhân viên trong hệ thống.
