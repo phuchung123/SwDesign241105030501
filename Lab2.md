@@ -13,9 +13,11 @@ Boundary Class:
 - ReportRequestForm: Lớp này đại diện cho giao diện người dùng, nơi Quản trị viên nhập tiêu chí báo cáo, như loại báo cáo, ngày bắt đầu và kết thúc, tên nhân viên, v.v.
 - ReportDisplay: Lớp này đại diện cho giao diện hiển thị báo cáo cho Quản trị viên.
 - ReportSaveDialog: Lớp này đại diện cho hộp thoại lưu báo cáo, nơi Quản trị viên nhập tên và vị trí lưu.
+
 Control Class:
 - ReportController: Lớp này quản lý các quy trình tạo báo cáo, bao gồm việc xử lý tiêu chí báo cáo, tạo báo cáo theo yêu cầu, và lưu báo cáo vào hệ thống.
 - SaveReportControl: Lớp này đảm bảo rằng báo cáo được lưu ở vị trí và tên do Quản trị viên chỉ định, đồng thời xác nhận quyết định lưu từ người dùng.
+
 Entity Class:
 - Report: Lớp này lưu trữ thông tin của báo cáo, bao gồm loại báo cáo, khoảng thời gian, tên nhân viên, và dữ liệu tổng hợp tương ứng.
 - Employee: Lớp này đại diện cho thông tin nhân viên, bao gồm tên nhân viên và thông tin cần thiết khác để tạo báo cáo.
@@ -38,9 +40,11 @@ Ca sử dụng này cho phép nhân viên tạo các báo cáo bao gồm “Tổ
 ### 4. Nhiệm vụ của các lớp phân tích:
 Boundary Class:
 - EmployeeInterface: Đóng vai trò là giao diện người dùng để nhận đầu vào từ nhân viên và hiển thị các thông tin cần thiết.
+
 Control Class:
 - ReportController: Quản lý và điều phối quy trình tạo báo cáo.
 - ReportSaveController: Quản lý quy trình lưu báo cáo, bao gồm việc yêu cầu nhân viên cung cấp tên và vị trí để lưu báo cáo.
+
 Entity Class:
 - EmployeeReport: Đại diện cho báo cáo mà nhân viên tạo ra.
 - Project: Đại diện cho dự án và các thông tin liên quan đến dự án (ví dụ: mã dự án).
@@ -72,9 +76,11 @@ Ca sử dụng này cho phép Quản trị viên lương (Payroll Administrator)
 ### 4. Nhiệm vụ của các lớp phân tích:
 Boundary Class:
 - Payroll Administrator Interface: Cung cấp giao diện cho Quản trị viên lương nhập thông tin nhân viên, chọn thao tác (thêm, cập nhật, xóa).
+
 Control Class:
 - EmployeeController: Điều phối và thực thi các tác vụ nghiệp vụ theo luồng yêu cầu từ giao diện người dùng.
 - EmployeeValidationController: Kiểm tra tính hợp lệ của thông tin nhập vào. Xử lý các tình huống ngoại lệ, ví dụ như thông báo lỗi khi không tìm thấy nhân viên khi cập nhật hoặc xóa.
+
 Entity Class:
 - Employee: Lưu trữ thông tin chi tiết của nhân viên, bao gồm các thuộc tính như tên, mã nhân viên, loại nhân viên, mức lương, số điện thoại, địa chỉ, v.v.
 - EmployeeID: Chịu trách nhiệm tạo mã số nhân viên duy nhất khi thêm nhân viên mới vào hệ thống.
