@@ -23,6 +23,7 @@ Entity Class:
 - Employee: Lớp này đại diện cho thông tin nhân viên, bao gồm tên nhân viên và thông tin cần thiết khác để tạo báo cáo.
 ### 5. Biểu đồ lớp:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/d5HBRkCm3Dth54GspG3D1OoYw4oT0GfqKJIzW60nAG5PSYKvXL7qPBEO8_KAew_Zn6aMuuKDK--HZy-al_xylREE6zUtah4hg75B2i6z8lpIlHBS3D18RYrQ5f_mZ9qsxXdVUhJkjpOjV328bqcn1BWto1rfjMmCEJJ4AoW7wVr71NjD8dC5sKxouK5rVKowBCUVxAXkdN1ZpSnBXqiJ7wNIDoasV8yrSQbtfyh3oQDkakvZVOrMMp9jv693TehuF37kNYjdj3phMpwJQCRYJN0ASmSNt4g1GzyDD-9YtmbflUIpi6kGkTSADiwGsbs3uYsMjvbzcp5JwV1ZKkD5ZzRzTvqZ6zVAaJi_VRdm2jpGZNboA4vpxHsj8Dnp59MOnzfEwW7naQmN6-utwnowpOtjKA7nZFau5kGePTfI3f4u2eHqhl1gT9oa3OapPDg_GHaTiw_KMJPVkTNgTZvG5Iow82tP3sMK5co6FD3BFdbkNgMnPv4J5Nw11l8J7qAgdw8bvNtpS1thxmdVJsYJTGlC-H05sKRlIM2S8n39cGMRGm-w0okYdGRR-OtSaXTS1krYou5QUWGlEw_IYUn863-ofv1gPEyrbga1mPttbjtvqV8_pty0003__mC0)
+
 Giải thích biểu đồ lớp:
 - ReportRequestForm, ReportDisplay, và ReportSaveDialog là các lớp Boundary để xử lý tương tác với người dùng.
 - ReportController và SaveReportControl là các lớp Control để quản lý quy trình tạo và lưu báo cáo.
@@ -50,6 +51,7 @@ Entity Class:
 - Project: Đại diện cho dự án và các thông tin liên quan đến dự án (ví dụ: mã dự án).
 ### 5. Biểu đồ lớp:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/h5HBJiCm4Dtx5DxHIkq58bHLK2egLQXgAo6MLZ9fJHrFi2T54U9aB3WILy29apO_TcJXA3FZcVUUd_FpzJst90nbYMBiXYyWbXhu7MOw4YRdeHBMidBb3qcgC0TOQG8JYn3u1-F5O-0j0qjRID7G0aX8PKVZW9zHHhuYaZPL8lSL8rE-Waj37svj4FQqHBCJPnZk-ja0Uu-Q32gF5MgqVb-LKs1gi0VGO0H12yi-Jo7WEp9I7oQy56JXQW9Uh1CEEhf-Zhl0Mo9i3Bv2I2iTOm5sBItTLh6PBxGNKdy8CU6nLF0aaWOaXQ4WYRgED7HeqYq4wrE-JjpZqhN-dxaN_HyqISexyhTRLqYcVRLzd924UiJCs6Sq9uW2BZLrKyuGbPADz5buW6jm91jnAyDJDrQsseZy1OJPep_HMA6WGMVq9Aw6rrpIwgIZDfKgt9InRZze3byoyufkGPLix56cblKlt7Gwwnixu24cIQQbKm8iVvTqPBsYOcVdJ88BOpjSNnCEdBaTIZYxxXKz9sgCRD1qWvCA2rh6vkuckJ_DBm000F__0m00)
+
 Giải thích biểu đồ lớp:
 - EmployeeInterface (Boundary):
   - Chứa các phương thức như requestReportDetails() để yêu cầu nhân viên cung cấp thông tin báo cáo, displayReport() để hiển thị báo cáo, và askForSaveReportDetails() để yêu cầu lưu báo cáo.
@@ -86,6 +88,7 @@ Entity Class:
 - EmployeeID: Chịu trách nhiệm tạo mã số nhân viên duy nhất khi thêm nhân viên mới vào hệ thống.
 ### 5. Biểu đồ lớp:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5JBJkGm4BpdAomkm65-80S4oymXqcftnUlUs3qJQ_t8kcqWGdpP7lWaVW5xCex6aw0XXqZfgYwNs-Ly_7-_90_E1wsgwfJziC48S3sxLa1KyVHc9t-WTrOfTYMqD9Ay0syTQun7jmQE9-orOkbn-2yW-TyTHeQqvknyg6DYhdIdR8_OcBNDW93KAUZd86hjyxKrQ-bqrdfB3cFDHpE3GHmjPeaThD2Dha28Z6Rnq0dmU5WLg71QVG8bzzcD6AmSBFmmqABJ6GiJZRsDyXRvtmoiNk9uqN3CsrqPBtt_rMxp0WiSpTNirZjfDaFTWCQoafbtVNU0Q90gVbm9uP2enCXo2UeMUN3Hpg-W7z6L30ylInI1fmaSD5lVeliAx5fhS4wmjS6f_YPEhMPB6nuLxgo0YW4jQzngBOcY-fIVT7vABNszJUm6tIGM-yTHHgC8Qn6F7J8DGhCSZts39jq4l3SoNemKd76BsyEzGRLD3BMoe-huDLiiBkQJNZEPMC0ziMVfssgMLRId9Wq6DZ5LnzdpwQuP1wM8hQFDfv7n3Raqe_tcPfbdLVJFTb4SIlHSNQ8HyQ_r2G00__y30000)
+
 Giải thích biểu đồ lớp:
 - Payroll Administrator Interface:
   - Là lớp giao diện (Boundary) tương tác với Quản trị viên lương. Lớp này cung cấp các phương thức để nhập thông tin nhân viên, yêu cầu thực hiện thao tác (thêm, cập nhật, xóa), và hiển thị kết quả.
@@ -121,6 +124,7 @@ Entity Class:
 - BankTransaction: Lớp này đại diện cho một giao dịch ngân hàng khi thanh toán qua chuyển khoản.
 ### 5. Biểu đồ lớp:
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5HBJiCm4Dtd55d2eXU8K5MGa402LAcvW6jFWuK_aJsf525Ene8ZSGN6YPCwQLEnYz-ycNdpo-_tpyOZSzXebN75lC-th7LMgHr_1z4eSFbdbkSvEbbLuA9nwom7xszkiw_ivAR1u2lWknMzZ-w-oxQ6lCXt5C5K0VOGMS528GYgfj29dePF4jkegkwVqTZ7Sa2kS8H7NIlR0lWUvapnHZ448aV40JqVcFae7JEUSPJMf2NDJ4_CYB4VIyvTVKOaO6a3wwIjlP9jrte4FQbjWJrKrtEbe9P9W-7RC3thDrFCjGG9s-mL16WF1WuI_GGKDEykpnH6gO4p9mBw8ZtUbH5OnyaDKfxDmLwRNIyL1dOY6IqoHQp_o360SsP5rRX-ijtcDbfJmHUbp0OsxFO8fAgOjet1QT_8_PxpWByrUa_Ba3RwqiI8SBHI10LdXxLQhS_tkXXEpMTdjk0m3huODzsFJINf1tlPRtgVL1GWE2qDUTUzATxhPVU5MoZY8VYqYTa2UOWJjxpeBcNgELQNz2Oa6Owt4nl0UOxh8XtK3YWRJhDjA3_z-Fu0003__mC0)
+
 Giải thích biểu đồ lớp:
 - PayrollScheduler: Quản lý lịch trình và kích hoạt quá trình trả lương.
 - PaymentMethod: Đại diện cho phương thức thanh toán của nhân viên, có thể là chuyển khoản ngân hàng, trả qua thư, hoặc nhận trực tiếp.
