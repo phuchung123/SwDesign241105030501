@@ -22,3 +22,22 @@
 ## 2. Maintain Timecard:
 
 ![](https://www.planttext.com/api/plantuml/png/X94n2i9G38RtdYAZ3bx0GGfQi9jGq3csh_BmlQIagV0GJ-RWaRo2RQs3KZLZllzB2BbVRt6jADfu5s6kB93uod4m9XAJAzB16TXW47Ok2xKQ3-S8sdh5OBQ0ITQDW1tB4TRSI0q9gOHf7_m6Up6bgdbZAPKi7jKo3VhFI3zaoLHQyO1KGDRilTL17G6zi4Ld2rGpicqK3JUoVBJda9Pmwen_yihMbSC0YGZB85fwgfSeDbIq3tW0003__mC0)
+
+- Mô tả Use Case:
+  - Nhập giờ làm việc vào hệ thống Payroll: Nhân viên nhập giờ làm việc và hệ thống xác thực, lưu trữ nếu hợp lệ.
+- Tiền điều kiện:
+  - Tài khoản nhân viên.
+  - Kết nối internet.
+- Luồng sự kiện chính:
+  - Mở giao diện nhập giờ.
+  - Nhập thông tin giờ làm việc.
+  - Xác nhận và gửi.
+- Kiểm tra:
+  - Hợp lệ: Lưu trữ thông tin.
+  - Không hợp lệ: Thông báo lỗi.
+- Hậu điều kiện: Lưu trữ thành công hoặc thông báo lỗi.
+- Lý do thiết kế:
+  - Hiệu quả: Nhập thông tin nhanh chóng.
+  - Độ chính xác: Xác thực trước khi lưu trữ.
+  - Trải nghiệm: Giao diện dễ sử dụng.
+  - Bảo mật: Chỉ nhân viên có quyền truy cập.
