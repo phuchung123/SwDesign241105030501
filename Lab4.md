@@ -41,3 +41,25 @@
   - Độ chính xác: Xác thực trước khi lưu trữ.
   - Trải nghiệm: Giao diện dễ sử dụng.
   - Bảo mật: Chỉ nhân viên có quyền truy cập.
+
+## 3. Run Payroll:
+
+![](https://www.planttext.com/api/plantuml/png/V951Ri9034NtESKNArXmWIug49jMQgMA25XR4qEd39d8uu0YnCbOS2Ikm2GCg6fflVH_tz-opyVJA2Y9rXkNaL4lUAUILYoPi54gLuxH-w16l7F8cw2ywM6V8LO2CNn6FszdOE5bZHTVIy2ugiHloGqwz1-ziyyjxp1buwN0cmsQNB_QronsSJNa5Hkxj2O1jw37OcUSVB9POqxE5bQRPFZHxC3hSZp04rwNsBRQt_2Kls9YOctvZRwFQR5PLP0ouY6q3YdxPdsW7x8HbqNyoWK00F__0m00)
+
+- Mô tả Use Case:
+  - Phê duyệt giờ làm việc: Quản lý kiểm tra và phê duyệt giờ làm việc của nhân viên.
+- Tiền điều kiện:
+  - Tài khoản quản lý.
+  - Kết nối internet.
+- Luồng sự kiện chính:
+  - Bắt đầu phê duyệt.
+  - Xem danh sách bản ghi.
+  - Chọn bản ghi.
+  - Kiểm tra tính hợp lệ:
+    - Hợp lệ: Phê duyệt và cập nhật trạng thái.
+    - Không hợp lệ: Thông báo lỗi.
+- Hậu điều kiện: Giờ làm việc được phê duyệt hoặc thông báo lỗi.
+- Lý do thiết kế:
+  - Hiệu quả: Phê duyệt nhanh chóng.
+  - Trải nghiệm: Giao diện thân thiện.
+  - Bảo mật: Chỉ quản lý có quyền.
